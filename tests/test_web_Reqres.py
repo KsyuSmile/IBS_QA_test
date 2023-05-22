@@ -104,7 +104,7 @@ def test_button_update_put(button_example, update_user, res_example):
     assert res_example.check_response_code() == str(status)
     assert json.loads(res_example.check_response_body()) == result
     """В 'updatedAt' записывается разные значения, так как один запрос
-    делается на несколько секунд раньше. Не думаю, что это баг"""
+    делается на несколько секунд раньше другого. Это не баг"""
 
 
 def test_button_update_patch(button_example, update_user, res_example):
@@ -121,7 +121,7 @@ def test_button_update_patch(button_example, update_user, res_example):
     assert res_example.check_response_code() == str(status)
     assert json.loads(res_example.check_response_body()) == result
     """В 'updatedAt' записывается разные значения, так как один запрос
-    делается на несколько секунд раньше. Не думаю, что это баг"""
+    делается на несколько секунд раньше другого. Это не баг"""
 
 
 def test_button_delete(button_example, delete_users, res_example):
