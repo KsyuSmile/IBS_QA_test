@@ -4,7 +4,6 @@ import pytest
 def test_get_list_users(get_users, page=2, per_page=""):
     """Получение списка всех пользователей"""
     status, result = get_users.list_users(page, per_page)
-    print(status)
     print(result)
     assert status == 200
 
@@ -22,11 +21,7 @@ def test_get_id_users_from_list(get_users, page=2, per_page=""):
     assert status == 200
 
 
-@pytest.mark.parametrize("user_id", [
-    2,
-    1,
-    3
-])
+@pytest.mark.parametrize("user_id", [2, 1, 3])
 def test_get_single_user(get_users, user_id):
     """Поиск пользователя по существующему ID"""
     status, result = get_users.single_users(user_id)
@@ -35,11 +30,7 @@ def test_get_single_user(get_users, user_id):
     assert status == 200
 
 
-@pytest.mark.parametrize("user_id", [
-    23,
-    88,
-    368
-])
+@pytest.mark.parametrize("user_id", [23, 88, 368])
 def test_get_single_user_not_found(get_users, user_id):
     """Поиск пользователя по несуществующему ID,
     в ответе ждём код 404 и пустое тело ответа"""
@@ -154,11 +145,7 @@ def test_post_login_unsuccessful(post_register, email="peter@klaven", password="
     assert "error" in result
 
 
-@pytest.mark.parametrize("delay", [
-    3,
-    5,
-    10
-])
+@pytest.mark.parametrize("delay", [3, 5, 10])
 def test_get_delayed_response(get_users, delay):
     """Получаем список пользователей с ожиданием в секундах"""
     status, result = get_users.delayed_response(delay)
