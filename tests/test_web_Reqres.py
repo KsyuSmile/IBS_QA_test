@@ -201,4 +201,3 @@ def test_button_delayed_response(button_example, get_users, res_example):
     assert res_example.check_response_code() == str(status)
     assert json.loads(res_example.check_response_body()) == result
 
-# pytest -v --driver Chrome --driver-path C:\Users\green\PycharmProjects\IBS_QA_test\chromedriver.exe tests\test_web_Reqres.py
