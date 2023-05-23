@@ -67,7 +67,7 @@ def test_get_single_resource_not_found(get_resource, resource="unknown", r_id=45
     assert result == {}
 
 
-def test_post_new_users(post_user, name="morpheus", job="leader"):
+def test_post_new_users(post_user, name="morpheus", job="leader"): # привет фанатам The Matrix)))
     """Создаём нового пользователя, проверяем, что в теле ответа
     содержится ID, а имя равно введённому имени"""
     status, result = post_user.create_new_user(name, job)
